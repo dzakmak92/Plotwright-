@@ -1,0 +1,885 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>The Line · 2,372 sf Barndominium Plan · Plotwright</title><meta name="description" content="The Line: One calm bar to the street. A taller glass living room behind. 2,372 sf · 3 bed · 2.5 bath · 98′ × 38′. Plan set, CAD and cost workbook."><meta property="og:type" content="website"><meta property="og:site_name" content="Plotwright"><meta property="og:title" content="The Line · 2,372 sf Barndominium Plan · Plotwright"><meta property="og:description" content="The Line: One calm bar to the street. A taller glass living room behind. 2,372 sf · 3 bed · 2.5 bath · 98′ × 38′. Plan set, CAD and cost workbook."><meta name="twitter:card" content="summary_large_image"><meta name="theme-color" content="#2f4a3a"><link rel="icon" href="../favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap"></head><body><style>/* Plotwright tokens: the plan-set brand (see ../../DESIGN.md) */
+:root{
+  color-scheme:light;
+  --cream:#f6f1e7; --sand:#e9e1d1; --paper:#fffdf8; --line:#ddd3c1; --line-strong:#c9bba4;
+  --green:#2f4a3a; --green-2:#26402f; --green-3:#3c5a47; --on-green:#f6f1e7; --on-green-muted:#b9c6b4;
+  --ink:#23262b; --muted:#6b675f; --terra:#9a5b3c; --terra-hover:#86492b; --terra-soft:#e7b48f;
+  --f-display:"Cormorant Garamond",Cormorant,Georgia,serif; --f-body:Inter,system-ui,sans-serif;
+  --r:999px; --r-img:6px;
+  --w:1320px; --gutter:clamp(16px,4vw,48px);
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+/* Plotwright v3: chapters, not blocks. Every element is visible at rest; motion is added by site.js and switched off for reduced motion. */
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img,video{max-width:100%;height:auto;display:block}
+a{color:inherit}
+h1,h2,h3,h4{font-family:var(--f-display);font-weight:500;margin:0;line-height:1;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:var(--w);margin:0 auto;padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.cap{font:600 11px/1.4 var(--f-body);letter-spacing:.24em;text-transform:uppercase}
+.caps{font-family:var(--f-display);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.terra{color:var(--terra)}
+.muted{color:var(--muted)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--green);color:var(--on-green);padding:8px 14px;z-index:200}
+.skip:focus{left:16px}
+:focus-visible{outline:2px solid var(--terra);outline-offset:3px}
+.num{font-variant-numeric:lining-nums tabular-nums}
+
+/* logo */
+.mark{width:34px;height:34px;flex:none}
+.logo{display:inline-flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+.logo .wm{display:flex;flex-direction:column;line-height:1}
+.logo .wm b{font-family:var(--f-display);font-weight:500;font-size:19px;letter-spacing:.32em}
+.logo .wm i{font:700 7.5px/1 var(--f-body);font-style:normal;letter-spacing:.42em;color:var(--terra);margin-top:5px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;font:600 12px/1 var(--f-body);letter-spacing:.18em;text-transform:uppercase;
+  padding:18px 30px;border-radius:var(--r);text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s var(--ease)}
+.btn svg{width:16px;height:16px;transition:transform .3s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-terra{background:var(--terra);color:#fff}
+.btn-terra:hover{background:var(--terra-hover)}
+.btn-green{background:var(--green);color:var(--on-green)}
+.btn-green:hover{background:var(--green-2)}
+.btn-line{border-color:currentColor;background:transparent}
+.btn-line:hover{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.on-green .btn-line:hover{background:var(--cream);color:var(--green);border-color:var(--cream)}
+
+/* floating pill nav */
+.pill{position:fixed;z-index:90;left:50%;top:calc(14px + env(safe-area-inset-top,0px));transform:translateX(-50%);display:flex;align-items:center;gap:6px;
+  background:rgba(38,64,47,.92);backdrop-filter:blur(12px);color:var(--on-green);padding:6px;border-radius:var(--r);box-shadow:0 12px 40px rgba(20,30,24,.25);max-width:calc(100vw - 24px)}
+.pill button,.pill a{font:600 11px/1 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:inherit;background:none;border:0;cursor:pointer;text-decoration:none;padding:13px 18px;border-radius:var(--r);white-space:nowrap}
+.pill .pl-logo{padding:4px 14px;display:flex;align-items:center;gap:10px}
+.pill .pl-logo .mark{width:28px;height:28px}
+.pill .pl-logo b{font-family:var(--f-display);font-weight:500;font-size:16px;letter-spacing:.3em;text-transform:uppercase}
+.pill .pl-buy{background:var(--terra);color:#fff}
+.pill .pl-buy:hover{background:var(--terra-hover)}
+.pill .pl-menu:hover{background:rgba(246,241,231,.1)}
+.burger{display:inline-flex;flex-direction:column;gap:4px;margin-right:10px;vertical-align:middle}
+.burger i{display:block;width:16px;height:1.5px;background:currentColor}
+@media (max-width:640px){.pill .pl-logo b{display:none}.pill button,.pill a{padding:12px 14px}}
+
+/* full-page menu */
+.menu{position:fixed;inset:0;z-index:95;background:var(--green);color:var(--on-green);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);
+  padding:calc(96px + env(safe-area-inset-top,0px)) max(var(--gutter),env(safe-area-inset-right,0px)) 40px max(var(--gutter),env(safe-area-inset-left,0px));gap:48px;overflow:auto}
+.menu[hidden]{display:none}
+.menu ol{list-style:none;margin:0;padding:0;counter-reset:m}
+.menu li a{display:flex;align-items:baseline;gap:18px;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(246,241,231,.14);font-family:var(--f-display);
+  font-size:clamp(32px,5vw,64px);line-height:1.05;transition:color .25s,padding .35s var(--ease)}
+.menu li a span{font:600 11px var(--f-body);letter-spacing:.2em;color:var(--terra-soft)}
+.menu li a:hover{color:var(--terra-soft);padding-left:14px}
+.menu .mi{border-radius:var(--r-img);overflow:hidden;align-self:center;aspect-ratio:4/3;background:var(--green-2)}
+.menu .mi img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.menu .close{position:absolute;right:max(var(--gutter),env(safe-area-inset-right,0px));top:calc(26px + env(safe-area-inset-top,0px))}
+.menu .links{display:flex;gap:24px;flex-wrap:wrap;margin-top:28px}
+.menu .links a{font:600 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;text-decoration:none;color:var(--on-green-muted)}
+@media (max-width:820px){.menu{grid-template-columns:1fr}.menu .mi{display:none}}
+
+/* loader (JS-created, removed after ~1.3 s) */
+.loader{position:fixed;inset:0;z-index:300;background:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px;color:var(--on-green);transition:transform .9s var(--ease)}
+.loader svg{width:110px;height:110px}
+.loader svg path{stroke-dasharray:220;stroke-dashoffset:220;animation:draw 1s var(--ease) forwards}
+.loader svg circle{transform-origin:100px 144px;transform:scale(0);animation:pop .4s .8s var(--ease) forwards}
+.loader b{font-family:var(--f-display);font-weight:500;font-size:22px;letter-spacing:.42em;opacity:0;animation:fade .6s .5s forwards}
+.loader.out{transform:translateY(-100%)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{transform:scale(1)}}
+@keyframes fade{to{opacity:1}}
+
+/* hero: the collection, cycling */
+.hero{position:relative;height:clamp(640px,100svh,1100px);min-height:640px;overflow:hidden;background:var(--green);color:var(--cream)}
+.slides{position:absolute;inset:0}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.4s ease}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 7s linear}
+.slide.on img{transform:scale(1)}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,40,31,.55) 0%,rgba(25,40,31,.05) 32%,rgba(25,40,31,.15) 55%,rgba(25,40,31,.85) 100%);pointer-events:none}
+.hero .in{position:absolute;z-index:2;left:0;right:0;bottom:0;padding-bottom:clamp(28px,5vh,56px)}
+.hero h1{font-size:clamp(54px,10.5vw,176px);line-height:.86;letter-spacing:-.01em;text-transform:uppercase;font-weight:500}
+.hero h1 .w{display:inline-block}
+.hero h1 em{font-style:italic;text-transform:none;color:var(--terra-soft);letter-spacing:-.02em}
+.hero .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:32px;align-items:end;margin-top:28px}
+.hero .lead{max-width:46ch;font-size:17px;color:#ede6d8}
+.hero .ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.now{min-width:280px;text-align:right}
+.now .nm{font-family:var(--f-display);font-size:34px;line-height:1}
+.now .sp{margin-top:8px;color:#e1d8c7}
+.ticks{display:flex;gap:6px;margin-top:16px;justify-content:flex-end}
+.ticks button{width:34px;height:24px;padding:0;background:none;border:0;cursor:pointer;position:relative}
+.ticks button::before{content:"";position:absolute;left:0;right:0;top:11px;height:2px;background:rgba(246,241,231,.3)}
+.ticks button::after{content:"";position:absolute;left:0;top:11px;height:2px;width:0;background:var(--cream)}
+.ticks button.on::after{width:100%;transition:width 6s linear}
+.tb-corner{position:absolute;z-index:2;right:max(var(--gutter),env(safe-area-inset-right,0px));top:calc(92px + env(safe-area-inset-top,0px));text-align:right;color:#e9e1d1}
+.tb-corner b{display:block;font-family:var(--f-display);font-size:30px;font-weight:500}
+@media (max-width:820px){.hero .row{grid-template-columns:1fr}.now{text-align:left}.ticks{justify-content:flex-start}.tb-corner{display:none}}
+
+/* chapters */
+.chapter{padding-block:clamp(88px,13vw,180px)}
+.on-green{background:var(--green);color:var(--on-green)}
+.on-sand{background:var(--sand)}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:28px}
+.eyebrow::before{content:"";width:40px;height:1px;background:currentColor}
+.on-green .eyebrow{color:var(--terra-soft)}
+.eyebrow{color:var(--terra)}
+.h-xl{font-size:clamp(46px,7.4vw,124px);line-height:.92;text-transform:uppercase;letter-spacing:.005em}
+.h-xl em{font-style:italic;text-transform:none;color:var(--terra)}
+.on-green .h-xl em{color:var(--terra-soft)}
+.h-l{font-size:clamp(38px,5vw,76px);line-height:.98}
+.h-l em{font-style:italic;color:var(--terra)}
+.on-green .h-l em{color:var(--terra-soft)}
+
+/* manifesto: words light up with scroll */
+.manifesto p[data-lit]{font-family:var(--f-display);font-size:clamp(32px,4.6vw,72px);line-height:1.12;max-width:24ch;font-weight:500;margin-top:28px}
+.manifesto p .w{transition:opacity .25s linear}
+.manifesto .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;margin-top:clamp(56px,8vw,110px);border-top:1px solid rgba(246,241,231,.18);padding-top:28px}
+.manifesto .meta b{display:block;font-family:var(--f-display);font-weight:500;font-size:clamp(44px,5vw,80px);line-height:1}
+.manifesto .meta span{color:var(--on-green-muted)}
+@media (max-width:760px){.manifesto .meta{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* collection index */
+.index-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap;margin-bottom:40px}
+.filters{display:flex;gap:6px;flex-wrap:wrap}
+.filters button{font:600 11px var(--f-body);letter-spacing:.18em;text-transform:uppercase;padding:12px 18px;border-radius:var(--r);border:1px solid var(--line-strong);background:transparent;color:var(--muted);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.idx{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.idx li[hidden]{display:none}
+.idx a{display:grid;grid-template-columns:70px minmax(0,1.5fr) minmax(0,1fr) 130px 120px 40px;gap:20px;align-items:center;padding:26px 0;border-bottom:1px solid var(--line-strong);text-decoration:none;position:relative}
+.idx a::before{content:"";position:absolute;inset:0;background:var(--sand);transform:scaleY(0);transform-origin:bottom;transition:transform .45s var(--ease);z-index:-1}
+.idx a:hover::before{transform:scaleY(1)}
+.idx .no{font:600 11px var(--f-body);letter-spacing:.2em;color:var(--terra)}
+.idx .nm{font-family:var(--f-display);font-size:clamp(34px,4.6vw,72px);line-height:1;transition:transform .45s var(--ease)}
+.idx a:hover .nm{transform:translateX(14px)}
+.idx .ds{color:var(--muted);font-size:14px}
+.idx .cs{font-family:var(--f-display);font-size:24px;color:var(--green)}
+.idx .cs small{display:block;font:600 10px var(--f-body);letter-spacing:.18em;color:var(--muted);text-transform:uppercase}
+.idx .pr{font:600 12px var(--f-body);letter-spacing:.14em}
+.idx .ar svg{width:22px;height:22px;transition:transform .35s var(--ease)}
+.idx a:hover .ar svg{transform:translateX(6px) rotate(-45deg)}
+.idx .th{display:none}
+.peek{position:fixed;z-index:50;left:0;top:0;width:340px;aspect-ratio:4/3;border-radius:var(--r-img);overflow:hidden;pointer-events:none;opacity:0;transform:translate(-50%,-50%) scale(.85);
+  transition:opacity .3s,transform .4s var(--ease);box-shadow:0 30px 60px rgba(0,0,0,.25)}
+.peek.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.peek img{width:100%;height:100%;object-fit:cover}
+@media (max-width:900px){.idx a{grid-template-columns:minmax(0,1fr) auto;gap:6px 16px;padding:20px 0}.idx .no,.idx .ar{display:none}.idx .th{display:block;grid-column:1/-1;border-radius:var(--r-img);overflow:hidden;aspect-ratio:16/9;margin-bottom:6px}
+  .idx .th img{width:100%;height:100%;object-fit:cover}.idx .ds{grid-column:1/-1}.peek{display:none}}
+
+/* horizontal "inside the collection": a plain horizontal scroller by default; JS (motion allowed, wide screens) pins it and drives it with the page scroll */
+.hz{position:relative}
+.hz .sticky{display:flex;flex-direction:column;justify-content:center;gap:36px;padding-block:clamp(88px,12vw,160px)}
+.hz .track{display:flex;gap:28px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;
+  padding-left:max(var(--gutter),env(safe-area-inset-left,0px));padding-right:max(var(--gutter),env(safe-area-inset-right,0px))}
+.hz figure{margin:0;flex:none;width:clamp(260px,38vw,620px);scroll-snap-align:start}
+.hz figure .im{border-radius:var(--r-img);overflow:hidden;aspect-ratio:3/2}
+.hz figure img{width:100%;height:100%;object-fit:cover}
+.hz figcaption{display:flex;justify-content:space-between;gap:12px;margin-top:12px;color:var(--on-green-muted)}
+.hz figcaption b{font-family:var(--f-display);font-weight:500;font-size:22px;color:var(--on-green)}
+.hz .hd{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+.hz-on .hz .sticky{position:sticky;top:0;height:100svh;overflow:hidden;padding-block:0}
+.hz-on .hz .track{overflow:visible;will-change:transform}
+.hz-on .hz figure:nth-child(even){margin-top:8vh}
+
+/* sticky story: from line to house */
+.story{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px)}
+.story .steps{display:flex;flex-direction:column}
+.story .step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;gap:16px;transition:opacity .5s}
+.js .story .step{opacity:.35}
+.js .story .step.on{opacity:1}
+.story .step h3{font-size:clamp(34px,4vw,60px)}
+.story .step p{color:var(--muted);max-width:42ch;font-size:17px}
+.story .step .cap{color:var(--terra)}
+.story .vis{position:sticky;top:12vh;height:76vh;border-radius:var(--r-img);overflow:hidden;background:var(--paper);box-shadow:0 30px 70px rgba(35,38,43,.12)}
+.story .vis img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:28px;opacity:0;transform:scale(1.04);transition:opacity .7s,transform 1.2s var(--ease)}
+.story .vis img.cover{object-fit:cover;padding:0}
+.story .vis img.on{opacity:1;transform:scale(1)}
+.story .vis .lbl{position:absolute;left:18px;bottom:16px;z-index:2;background:var(--green);color:var(--on-green);padding:8px 14px;border-radius:var(--r)}
+@media (max-width:900px){.story{grid-template-columns:1fr}.story .vis{position:relative;top:0;height:56vw;min-height:280px;order:-1}.story .step,.js .story .step{min-height:auto;padding-block:36px;opacity:1}}
+
+/* calculator */
+.calc{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);border-radius:var(--r-img);overflow:hidden}
+.calc .in{background:var(--green-2);padding:clamp(28px,4vw,48px);display:flex;flex-direction:column;gap:24px}
+.calc label{display:block;color:var(--on-green-muted);margin-bottom:10px}
+.calc select{width:100%;height:54px;background:transparent;color:var(--on-green);border:1px solid rgba(246,241,231,.3);border-radius:var(--r);padding:0 20px;font:500 15px var(--f-body);appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--on-green) 50%),linear-gradient(135deg,var(--on-green) 50%,transparent 50%);background-position:calc(100% - 24px) 24px,calc(100% - 18px) 24px;background-size:6px 6px;background-repeat:no-repeat}
+.calc select option{color:var(--ink)}
+.calc select:focus{border-color:var(--terra-soft);outline:none}
+.seg{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(246,241,231,.3);border-radius:var(--r);overflow:hidden}
+.seg button{background:transparent;color:var(--on-green-muted);border:0;height:50px;font:600 11px var(--f-body);letter-spacing:.18em;text-transform:uppercase;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--cream);color:var(--green)}
+.calc .out{background:var(--cream);color:var(--ink);padding:clamp(28px,4vw,48px)}
+.calc .total{font-family:var(--f-display);font-weight:500;font-size:clamp(76px,10vw,150px);line-height:.85;color:var(--green);margin:14px 0 6px}
+.bars{display:flex;flex-direction:column;gap:12px;margin-top:22px}
+.bar{display:grid;grid-template-columns:170px minmax(0,1fr) 70px;gap:14px;align-items:center;font-size:14px}
+.bar i{display:block;height:4px;background:var(--sand);border-radius:2px;overflow:hidden}
+.bar i em{display:block;height:100%;background:var(--terra);transition:width .7s var(--ease)}
+.bar b{font-family:var(--f-display);font-weight:500;font-size:20px;text-align:right}
+.fine{font-size:13px;color:var(--muted);margin-top:18px}
+.on-green .fine,.calc .in .fine{color:var(--on-green-muted)}
+@media (max-width:900px){.calc{grid-template-columns:1fr}}
+@media (max-width:480px){.bar{grid-template-columns:110px minmax(0,1fr) 58px}}
+
+/* kit: sheets fan */
+.kit{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:center}
+.fan{position:relative;aspect-ratio:4/3}
+.fan figure{position:absolute;margin:0;width:62%;background:#fff;border:1px solid var(--line);padding:10px;box-shadow:0 20px 50px rgba(35,38,43,.14);transition:transform .9s var(--ease)}
+.fan figure img{width:100%;aspect-ratio:4/3;object-fit:contain}
+.fan figcaption{font:600 10px var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-top:6px}
+.fan figure:nth-child(1){left:2%;top:4%;transform:rotate(-7deg)}
+.fan figure:nth-child(2){left:20%;top:0;transform:rotate(-2deg)}
+.fan figure:nth-child(3){left:36%;top:10%;transform:rotate(4deg)}
+.fan figure:nth-child(4){left:14%;top:30%;transform:rotate(2deg)}
+.fan.tight figure{transform:rotate(0) translate(0,0)}
+.files{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.files li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:16px;padding:16px 0;border-bottom:1px solid var(--line-strong)}
+.files b{font-weight:600}
+.files span{display:block;color:var(--muted);font-size:14px}
+.files em{font-style:normal;font:600 10px var(--f-body);letter-spacing:.2em;color:var(--terra);padding-top:4px}
+@media (max-width:900px){.kit{grid-template-columns:1fr}}
+
+/* shop option: masked reveal */
+.shop{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:center}
+.mask{border-radius:200px 200px var(--r-img) var(--r-img);overflow:hidden;background:var(--paper)}
+.mask img{width:100%;transform:scale(1.08);transition:transform 1.4s var(--ease)}
+.mask.in img{transform:scale(1)}
+.list{list-style:none;margin:28px 0 0;padding:0;border-top:1px solid var(--line-strong)}
+.list li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line-strong)}
+.list li b{font-family:var(--f-display);font-weight:500;font-size:22px;color:var(--green)}
+@media (max-width:900px){.shop{grid-template-columns:1fr}}
+
+/* comparison */
+.cmp-wrap{overflow-x:auto}
+table.cmp{border-collapse:collapse;width:100%;min-width:620px}
+table.cmp th,table.cmp td{text-align:left;padding:22px 16px;border-bottom:1px solid rgba(246,241,231,.16)}
+table.cmp th{font:600 11px var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--on-green-muted)}
+table.cmp td:first-child{font-family:var(--f-display);font-size:24px}
+table.cmp td:nth-child(2){color:var(--on-green-muted)}
+table.cmp td:last-child{color:var(--terra-soft);font-weight:600}
+
+/* offers */
+.offers{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:20px}
+.offer{border:1px solid var(--line-strong);border-radius:var(--r-img);padding:clamp(28px,3vw,44px);display:flex;flex-direction:column;gap:14px;background:var(--paper)}
+.offer.main{background:var(--green);color:var(--on-green);border-color:var(--green)}
+.offer h3{font-size:34px}
+.offer .price{font-family:var(--f-display);font-weight:500;font-size:clamp(64px,7vw,96px);line-height:.9}
+.offer .price small{font:500 13px var(--f-body);margin-left:8px;color:var(--muted)}
+.offer.main .price small,.offer.main p{color:var(--on-green-muted)}
+.offer p{color:var(--muted);font-size:15px}
+.offer .cap{color:var(--terra)}
+.offer.main .cap{color:var(--terra-soft)}
+.offer .btn{margin-top:auto}
+.countdown{display:inline-flex;gap:10px;align-items:center;margin-top:6px}
+.pend{font-size:13px;color:var(--terra)}
+.offer.main .pend{color:var(--terra-soft)}
+@media (max-width:900px){.offers{grid-template-columns:1fr}}
+
+/* free sample band + marquee */
+.marquee{overflow:hidden;border-block:1px solid rgba(246,241,231,.18);padding-block:18px;white-space:nowrap}
+.marquee .mq{display:inline-flex;gap:48px;animation:mq 38s linear infinite;font-family:var(--f-display);font-size:clamp(34px,5vw,72px);text-transform:uppercase;letter-spacing:.04em}
+.marquee .mq span::after{content:"";display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--terra-soft);margin-left:48px;vertical-align:middle}
+@keyframes mq{to{transform:translateX(-50%)}}
+.sample{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:center}
+.sample .sheet{background:#fff;padding:12px;border-radius:2px;transform:rotate(-2deg);box-shadow:0 30px 70px rgba(0,0,0,.35)}
+@media (max-width:900px){.sample{grid-template-columns:1fr}}
+
+/* faq */
+.faq{max-width:900px;border-top:1px solid var(--ink)}
+.faq details{border-bottom:1px solid var(--line-strong)}
+.faq summary{list-style:none;cursor:pointer;padding:26px 0;font-family:var(--f-display);font-size:clamp(24px,2.4vw,32px);display:flex;justify-content:space-between;gap:20px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"";flex:none;width:14px;height:14px;background:linear-gradient(var(--terra),var(--terra)) center/14px 1.5px no-repeat,linear-gradient(var(--terra),var(--terra)) center/1.5px 14px no-repeat;transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 26px;color:var(--muted);max-width:66ch}
+.faq-grid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:48px}
+.faq-grid .h-xl{font-size:clamp(44px,5.2vw,84px)}
+@media (max-width:900px){.faq-grid{grid-template-columns:1fr}}
+
+/* footer with giant wordmark */
+footer{background:var(--green);color:var(--on-green);padding-top:96px;overflow:hidden}
+footer .cols{display:grid;grid-template-columns:2fr 1fr 1fr;gap:48px}
+footer h4{font:600 11px var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--on-green-muted);margin:0 0 18px}
+footer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--terra-soft)}
+footer .note{color:var(--on-green-muted);font-size:14px;max-width:46ch;margin-top:22px}
+footer .giant{font-family:var(--f-display);font-weight:500;font-size:clamp(40px,12.6vw,200px);letter-spacing:.04em;line-height:.8;margin-top:72px;white-space:nowrap;text-align:center;overflow:hidden;color:#3c5a47}
+footer .bottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:22px calc(22px + env(safe-area-inset-bottom,0px));border-top:1px solid rgba(246,241,231,.14);color:var(--on-green-muted);font-size:13px}
+@media (max-width:760px){footer .cols{grid-template-columns:1fr}}
+
+/* design page */
+.dhero{position:relative;height:clamp(600px,92svh,1000px);overflow:hidden;background:var(--green);color:var(--cream)}
+.dhero img{width:100%;height:100%;object-fit:cover;transform:scale(1.06);transition:transform 2.4s var(--ease)}
+.dhero.in img{transform:scale(1)}
+.dhero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(25,40,31,.45),rgba(25,40,31,0) 30%,rgba(25,40,31,.1) 55%,rgba(25,40,31,.88))}
+.dhero .in{position:absolute;z-index:2;left:0;right:0;bottom:0;padding-bottom:44px}
+.dhero h1{font-size:clamp(64px,13vw,220px);line-height:.82;text-transform:uppercase}
+.dhero .row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:28px;align-items:end;margin-top:22px}
+.dhero .sub{font-family:var(--f-display);font-style:italic;font-size:clamp(22px,2.4vw,32px);max-width:28ch;line-height:1.2}
+.specs{display:flex;flex-wrap:wrap;gap:8px}
+.specs span{font:600 10px var(--f-body);letter-spacing:.18em;text-transform:uppercase;border:1px solid rgba(246,241,231,.45);padding:9px 14px;border-radius:var(--r)}
+@media (max-width:820px){.dhero .row{grid-template-columns:1fr}}
+.buybar{position:fixed;z-index:80;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:18px;background:var(--cream);
+  padding:8px 8px 8px 24px;border-radius:var(--r);box-shadow:0 18px 50px rgba(20,30,24,.25);max-width:calc(100vw - 24px)}
+.buybar .nm{font-family:var(--f-display);font-size:20px;white-space:nowrap}
+.buybar .p{font-family:var(--f-display);font-size:26px;color:var(--green)}
+@media (max-width:520px){.buybar .nm{display:none}}
+.dgrid{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:start}
+.buy{border:1px solid var(--line-strong);border-radius:var(--r-img);padding:32px;background:var(--paper);display:flex;flex-direction:column;gap:14px;position:sticky;top:96px}
+.buy .pr{font-family:var(--f-display);font-size:96px;line-height:.85;color:var(--green)}
+.buy .note{font-size:13px;color:var(--muted)}
+.gal{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;cursor:grab}
+.gal figure{margin:0;flex:none;width:min(78vw,760px);scroll-snap-align:start}
+.gal img{border-radius:var(--r-img);aspect-ratio:3/2;object-fit:cover;width:100%}
+.gal figcaption{margin-top:12px;color:var(--muted)}
+.paper{background:var(--paper);border-radius:var(--r-img);padding:clamp(14px,2vw,28px);box-shadow:0 30px 70px rgba(35,38,43,.1)}
+.rooms{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink);columns:2;column-gap:32px}
+.rooms li{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line-strong);break-inside:avoid;font-size:15px}
+.rooms b{font-family:var(--f-display);font-weight:500;font-size:18px}
+.vid{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center}
+.vid video{border-radius:var(--r-img);width:100%;max-width:380px;aspect-ratio:9/16;object-fit:cover;background:var(--green-2)}
+@media (max-width:900px){.dgrid,.vid{grid-template-columns:1fr}.buy{position:static}.rooms{columns:1}}
+
+/* legal */
+.legal{max-width:760px;padding-block:150px 90px}
+.legal h1{font-size:clamp(48px,7vw,96px);text-transform:uppercase;margin-bottom:28px}
+.legal h2{font-size:32px;margin:40px 0 12px}
+.legal p{color:var(--muted);margin-bottom:12px;max-width:66ch}
+.ph-mark{background:#f0dcc6;color:var(--terra-hover);padding:1px 6px;border-radius:3px;font-size:13px;font-weight:600}
+
+/* scroll reveals: start visible; JS only nudges position */
+.rise{transition:transform 1s var(--ease)}
+.js .rise.pre{transform:translateY(36px)}
+
+@media (prefers-reduced-motion:reduce){
+  .slide,.slide img,.mask img,.dhero img,.fan figure,.rise,.story .vis img{transition:none!important;transform:none!important}
+  .marquee .mq{animation:none}.loader{display:none}.ticks button.on::after{transition:none}
+}
+
+/* story: per-step image on small screens */
+.story .step .sm{display:none}
+@media (max-width:900px){.story .vis{display:none}.story .step .sm{display:block;width:100%;aspect-ratio:4/3;object-fit:contain;background:var(--paper);border-radius:var(--r-img);padding:14px;box-shadow:0 20px 50px rgba(35,38,43,.1)}.story .step .sm.cover{object-fit:cover;padding:0}}
+/* sample page */
+.sample-page{padding-top:170px}
+.sample-page .list li{border-color:rgba(246,241,231,.2)}.sample-page .list b{color:var(--on-green)}
+.sample-page .pend{color:var(--terra-soft);margin-top:12px}.sample-page .fine{color:var(--on-green-muted)}
+.gal{padding-inline:max(var(--gutter),env(safe-area-inset-left,0px)) max(var(--gutter),env(safe-area-inset-right,0px))}
+@media (max-width:640px){table.cmp{min-width:0}table.cmp th,table.cmp td{padding:14px 8px 14px 0;font-size:13px;vertical-align:top}table.cmp th{font-size:9px;letter-spacing:.12em}table.cmp td:first-child{font-size:18px;line-height:1.15}}
+.gal,.hz .track{scroll-padding-inline:max(var(--gutter),env(safe-area-inset-left,0px))}
+.on-green .gal figcaption{color:var(--on-green-muted)}
+.buybar .btn{white-space:nowrap}
+@media (max-width:520px){.buybar{gap:12px;padding-left:20px}.buybar .p{font-size:22px}}
+
+/* ===== v3.1: catalogue, collections, funnel ===== */
+[id]{scroll-margin-top:90px}
+.lede{font-size:17px;max-width:46ch}
+.on-green .lede{color:var(--on-green-muted)}
+.index-head .lede{max-width:44ch}
+.ctas{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.mt28{margin-top:28px}.mt36{margin-top:36px}.mt40{margin-top:40px}.mb48{margin-bottom:48px}
+.hint{color:var(--on-green-muted)}
+.btn-line.on-img{color:#fff}
+.now .cap{color:var(--terra-soft)}
+.now .nm{display:block;color:inherit;text-decoration:none;margin-top:6px}
+.now .nm:hover{color:var(--terra-soft)}
+.menu .mhd{color:var(--terra-soft);margin-bottom:18px}
+.menu li.all a{font-style:italic;color:var(--terra-soft)}
+.txtlink,.txtbtn{font:600 12px/1.4 var(--f-body);letter-spacing:.16em;text-transform:uppercase;color:var(--terra);text-decoration:underline;text-underline-offset:5px;background:none;border:0;padding:6px 0;cursor:pointer}
+.on-green .txtlink{color:var(--terra-soft)}
+.txtbtn[aria-pressed="true"]{visibility:hidden}
+
+/* index additions */
+.idx .new{font:600 10px var(--f-body);font-style:normal;letter-spacing:.18em;text-transform:uppercase;background:var(--terra);color:#fff;padding:5px 9px;border-radius:var(--r);margin-left:14px;vertical-align:middle}
+.idx-foot{display:flex;gap:16px 28px;align-items:center;flex-wrap:wrap;margin-top:40px}
+.idx.cat a{grid-template-columns:150px minmax(0,1.3fr) minmax(0,1fr) 120px 110px 30px;padding:20px 0}
+.idx.cat .no{display:none}
+.idx.cat .th{display:block;aspect-ratio:4/3;border-radius:var(--r-img);overflow:hidden}
+.idx.cat .th img{width:100%;height:100%;object-fit:cover}
+.idx.cat .nm{font-size:clamp(30px,3.4vw,52px)}
+@media (max-width:900px){.idx.cat a{grid-template-columns:minmax(0,1fr) auto}.idx.cat .th{aspect-ratio:16/9}}
+
+/* catalogue filter bar */
+.chapter.top{padding-top:clamp(130px,14vw,190px)}
+.fbar{display:flex;flex-wrap:wrap;gap:22px 40px;align-items:flex-end;padding:26px 0;border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong)}
+.fg{display:flex;flex-direction:column;gap:10px;min-width:0}
+.fg>.cap,.fg label.cap{color:var(--muted)}
+.fs{margin-left:auto}
+.fs select,.st select{height:44px;min-width:220px;max-width:100%;border:1px solid var(--line-strong);border-radius:var(--r);background-color:var(--paper);color:var(--ink);padding:0 44px 0 18px;font:500 14px var(--f-body);appearance:none;
+  background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);background-position:calc(100% - 22px) 19px,calc(100% - 17px) 19px;background-size:5px 5px;background-repeat:no-repeat}
+.fstat{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:22px 0 10px;color:var(--muted)}
+.empty{padding:56px 0 20px;border-top:1px solid var(--ink)}
+.empty[hidden]{display:none}
+.empty .muted{margin-top:16px;max-width:52ch}
+@media (max-width:700px){.fs{margin-left:0;width:100%}.fs select{width:100%}}
+
+/* collection tiles */
+.ctiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:20px}
+.ctile{position:relative;display:block;aspect-ratio:16/11;border-radius:var(--r-img);overflow:hidden;color:var(--cream);text-decoration:none;background:var(--green)}
+.ctile img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.ctile:hover img{transform:scale(1.05)}
+.ctile .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:clamp(20px,3vw,34px);background:linear-gradient(180deg,rgba(25,40,31,0) 35%,rgba(25,40,31,.85))}
+.ctile .cap{color:var(--terra-soft)}
+.ctile b{font-family:var(--f-display);font-weight:500;font-size:clamp(32px,3.6vw,54px);line-height:1}
+.ctile .mt{font-size:14px;color:#e1d8c7}
+.ctile .go{position:absolute;top:20px;right:20px;width:48px;height:48px;border-radius:50%;background:var(--cream);color:var(--green);display:grid;place-items:center;transition:transform .4s var(--ease)}
+.ctile .go svg{width:20px;height:20px}
+.ctile:hover .go{transform:rotate(-45deg)}
+
+/* finder teaser (home, thank-you page) */
+.finder-teaser{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.qprev{list-style:none;margin:0;padding:0;border-top:1px solid rgba(246,241,231,.25)}
+.qprev li{display:flex;gap:20px;align-items:baseline;padding:20px 0;border-bottom:1px solid rgba(246,241,231,.25);font-family:var(--f-display);font-size:clamp(24px,2.6vw,34px);line-height:1.15}
+.qprev .cap{color:var(--terra-soft);flex:none}
+.finder-teaser.light{align-items:start}
+@media (max-width:900px){.finder-teaser{grid-template-columns:1fr}}
+
+/* collection + plan pages */
+.crumbs{color:var(--terra-soft);margin-bottom:14px}
+.crumbs a{color:inherit;text-decoration:underline;text-underline-offset:4px;text-decoration-color:rgba(231,180,143,.5)}
+.dhero h1.ctitle{font-size:clamp(38px,9vw,150px);line-height:.88;overflow-wrap:anywhere}
+.bundle{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,6vw,96px);align-items:center}
+.bbox{background:var(--cream);color:var(--ink);border-radius:var(--r-img);padding:clamp(28px,3.4vw,44px);display:flex;flex-direction:column;gap:14px}
+.bbox .cap{color:var(--terra)}
+.bbox .price{font-family:var(--f-display);font-weight:500;font-size:clamp(80px,9vw,130px);line-height:.85;color:var(--green)}
+.bbox .was{color:var(--muted);font-size:15px}
+.bbox .fine{color:var(--muted);margin-top:0}
+.buy .up{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.buy .up a{color:var(--terra)}
+.gal-band{padding-block:clamp(72px,10vw,140px)}
+@media (max-width:900px){.bundle{grid-template-columns:1fr}}
+
+/* free-sample band */
+.band{padding-block:0 clamp(88px,12vw,160px)}
+.band .sample{margin-top:clamp(64px,9vw,120px)}
+.band .lede{margin-top:20px}
+
+/* plan finder */
+.finder{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(32px,5vw,80px);align-items:start;margin-top:12px}
+.q{border:0;margin:0;padding:30px 0;border-top:1px solid var(--line-strong);min-width:0}
+.q legend{display:flex;gap:16px;align-items:baseline;font-family:var(--f-display);font-size:clamp(26px,3vw,40px);line-height:1.1;padding:0;float:left;width:100%}
+.q legend .cap{color:var(--terra);flex:none}
+.q .opts{clear:both;display:flex;flex-wrap:wrap;gap:8px;padding-top:18px}
+.q label{position:relative;cursor:pointer}
+.q input{position:absolute;opacity:0;width:1px;height:1px}
+.q label span{display:inline-block;font:500 14px var(--f-body);padding:12px 20px;border:1px solid var(--line-strong);border-radius:var(--r);background:var(--paper);transition:background .2s,color .2s,border-color .2s}
+.q label:hover span{border-color:var(--ink)}
+.q input:checked+span{background:var(--green);border-color:var(--green);color:var(--on-green)}
+.q input:focus-visible+span{outline:2px solid var(--terra);outline-offset:3px}
+.q .st{display:flex;flex-direction:column;gap:10px;margin-top:22px}
+.q .st .cap{color:var(--muted)}
+.res{position:sticky;top:96px}
+.res-in{background:var(--green);color:var(--on-green);border-radius:var(--r-img);padding:clamp(22px,3vw,34px)}
+.fcount{font-family:var(--f-display);font-size:26px;line-height:1.15;margin:10px 0 16px}
+.fres{list-style:none;margin:0;padding:0}
+.fres>li{padding:18px 0;border-top:1px solid rgba(246,241,231,.18)}
+.fl{display:grid;grid-template-columns:104px minmax(0,1fr);gap:16px;align-items:center;text-decoration:none;color:inherit}
+.fl img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.fx .cap{color:var(--terra-soft)}
+.fx b{display:block;font-family:var(--f-display);font-weight:500;font-size:28px;line-height:1.05;margin:2px 0 4px}
+.fx small{display:block;color:var(--on-green-muted);font-size:12.5px;line-height:1.4}
+.chk{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:5px}
+.chk li{position:relative;padding-left:24px;font-size:14px;line-height:1.4}
+.chk li::before{position:absolute;left:0;top:0;font-weight:700}
+.chk .ok::before{content:"✓";color:#a9d3a0}
+.chk .warn::before{content:"~";color:var(--terra-soft)}
+.chk .no::before{content:"✕";color:#f0a58a}
+.chk .no{color:var(--on-green-muted)}
+.fp{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:12px;font-size:14px}
+.fp b{font-family:var(--f-display);font-size:20px;font-weight:500}
+.fp a{color:var(--terra-soft);font-weight:600}
+.res-cta{border-top:1px solid rgba(246,241,231,.18);margin-top:12px;padding-top:20px;display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.res-cta p{color:var(--on-green-muted)}
+@media (max-width:900px){.finder{grid-template-columns:1fr}.res{position:static}}
+
+/* landing / thank-you heroes */
+.pill.min{padding:6px 10px 6px 6px}
+.lp-hero{padding-block:clamp(140px,15vw,200px) clamp(80px,10vw,140px);overflow:hidden}
+.lp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px);align-items:center}
+.lp-hero .lede{margin-top:24px;font-size:18px}
+.lp-hero .fine{color:var(--on-green-muted)}
+.ticks-list{list-style:none;margin:26px 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+.ticks-list li{position:relative;padding-left:30px}
+.ticks-list li::before{content:"";position:absolute;left:0;top:.55em;width:16px;height:8px;border-left:2px solid var(--terra-soft);border-bottom:2px solid var(--terra-soft);transform:rotate(-45deg) translateY(-4px)}
+.cta-row{margin-top:32px}
+.cta-row .pend{color:var(--terra-soft);margin-top:12px}
+.stack{position:relative;aspect-ratio:1/1}
+.stack figure{position:absolute;margin:0;width:82%;background:#fff;padding:10px;box-shadow:0 30px 70px rgba(0,0,0,.35)}
+.stack figure img{width:100%}
+.stack figure:nth-child(1){left:0;top:4%;transform:rotate(-6deg)}
+.stack figure:nth-child(2){left:9%;top:22%;transform:rotate(2deg)}
+.stack figure:nth-child(3){left:18%;top:40%;transform:rotate(-1deg)}
+.done .h-xl{max-width:14ch}
+.next{list-style:none;margin:48px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.next li{border-top:1px solid rgba(246,241,231,.3);padding-top:16px;font-family:var(--f-display);font-size:24px;line-height:1.2}
+.next .cap{display:block;color:var(--terra-soft);margin-bottom:8px}
+.sheets6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2.4vw,32px)}
+.sheets6 figure{margin:0}
+.sheets6 img{background:#fff;padding:8px;box-shadow:0 20px 50px rgba(35,38,43,.12);width:100%}
+.sheets6 figcaption{margin-top:14px;font-family:var(--f-display);font-size:22px;line-height:1.2}
+.sheets6 figcaption .cap{display:block;color:var(--terra);margin-bottom:4px}
+.steps3{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(24px,3vw,48px)}
+.steps3.four{grid-template-columns:repeat(4,minmax(0,1fr))}
+.steps3 li{border-top:1px solid var(--ink);padding-top:22px}
+.steps3 b{display:block;font-family:var(--f-display);font-weight:500;font-size:64px;line-height:1;color:var(--terra)}
+.steps3 h3{font-size:32px;margin:14px 0 10px}
+.steps3 p{color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(40px,6vw,96px)}
+.launch{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.lp-end{text-align:center}
+.lp-end .ctas,.lp-end .cta-row{justify-content:center;display:flex;flex-direction:column;align-items:center}
+@media (max-width:1000px){.steps3.four{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){.lp{grid-template-columns:1fr}.stack{max-width:520px;width:100%}.sheets6{grid-template-columns:repeat(2,minmax(0,1fr))}.steps3,.two{grid-template-columns:1fr}.next{grid-template-columns:1fr}}
+@media (max-width:560px){.steps3.four{grid-template-columns:1fr}.sheets6 figcaption{font-size:18px}}
+
+/* footer: 4 columns + minimal funnel footer */
+footer .cols{grid-template-columns:2fr 1fr 1fr 1fr}
+footer .logo{color:var(--on-green)}
+footer.min{padding-top:0}
+footer.min .bottom{border-top:0}
+footer .bottom .lg{display:flex;gap:18px;flex-wrap:wrap}
+@media (max-width:900px){footer .cols{grid-template-columns:1fr 1fr}footer .cols>div:first-child{grid-column:1/-1}}
+@media (max-width:480px){footer .cols{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.ctile img,.ctile .go{transition:none}}
+/* QA fixes */
+.h-xl+.lede,.h-l+.lede,.h-xl+p,.h-l+p{margin-top:24px}
+.idx.compact a{grid-template-columns:120px minmax(0,1fr) auto;gap:4px 20px;padding:16px 0}
+.idx.compact .th{display:block;grid-row:span 2;aspect-ratio:4/3;border-radius:var(--r-img);overflow:hidden;margin:0}
+.idx.compact .th img{width:100%;height:100%;object-fit:cover}
+.idx.compact .no,.idx.compact .cs,.idx.compact .ar{display:none}
+.idx.compact .nm{font-size:clamp(28px,2.6vw,38px);align-self:end}
+.idx.compact .ds{grid-column:2/-1;font-size:13px}
+.idx.compact .pr{grid-column:3;grid-row:1;align-self:end}
+@media (max-width:900px){.idx.compact a{grid-template-columns:96px minmax(0,1fr) auto}.idx.compact .th{grid-column:auto;aspect-ratio:4/3;margin:0}.idx.compact .ds{grid-column:2/-1}}
+footer.min .bottom .lg a{padding:6px 0;display:inline-block}
+/* scale fixes: any number of offers / collection tiles */
+.offers{grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr))}
+.ctile .ov{background:linear-gradient(180deg,rgba(25,40,31,.05) 0%,rgba(25,40,31,.35) 45%,rgba(25,40,31,.9) 100%)}
+.ctile b{font-size:clamp(30px,2.9vw,50px)}
+.ctile .ov .cap{max-width:calc(100% - 64px)}
+.offer .price{font-size:clamp(60px,5.4vw,92px)}
+.offer .price small{display:block;margin:10px 0 0;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.offer .btn{width:100%;padding-inline:16px;letter-spacing:.14em;white-space:nowrap}
+/* preview-only helpers (the note exists only in the private preview build) */
+.pv-note{background:var(--terra);color:#fff;padding:16px 0}
+.pv-note .wrap{display:flex;gap:16px 28px;align-items:center;flex-wrap:wrap}
+.pv-note .txtlink{color:#fff}
+.fmap .txtlink{display:inline-block;margin-top:12px}
+</style><a class="skip" href="#main">Skip to content</a>
+<nav class="pill" aria-label="Main"><button class="pl-menu" type="button" data-menu-open aria-controls="menu" aria-expanded="false"><span class="burger" aria-hidden="true"><i></i><i></i></span>Menu</button>
+<a class="pl-logo" href="../index.html" aria-label="Plotwright home"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M30 122 L100 56 L170 122" fill="none" stroke="#f6f1e7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="100" cy="144" r="13" fill="#9a5b3c"/></svg><b>Plotwright</b></a><a class="pl-buy" href="../plans/index.html">Shop plans</a></nav>
+<div class="menu" id="menu" hidden role="dialog" aria-modal="true" aria-label="Menu"><button class="btn btn-line close" type="button" data-menu-close>Close</button>
+<div><p class="cap mhd">The plans</p><ol><li><a href="../plans/tee.html" data-img="../img/tee/front.jpg"><span>PW-GC-04</span>The Tee</a></li><li><a href="../plans/line.html" data-img="../img/line/front.jpg"><span>PW-GC-01</span>The Line</a></li><li><a href="../plans/ell.html" data-img="../img/ell/front.jpg"><span>PW-GC-02</span>The Ell</a></li><li><a href="../plans/telescope.html" data-img="../img/telescope/front.jpg"><span>PW-GC-03</span>The Telescope</a></li><li><a href="../plans/entry-court.html" data-img="../img/entry-court/front.jpg"><span>PW-GC-05</span>The Entry Court</a></li><li><a href="../plans/offset.html" data-img="../img/offset/front.jpg"><span>PW-GC-06</span>The Offset</a></li><li><a href="../plans/prairie.html" data-img="../img/prairie/front.jpg"><span>BD-4060-A</span>The Prairie</a></li></ol>
+<div class="links"><a href="../plans/index.html">All 7 plans</a><a href="../collections/garden.html">The Garden Collection</a><a href="../collections/classic.html">The Classic Collection</a><a href="../plan-finder.html">Plan finder</a><a href="../index.html#cost">Cost to build</a><a href="../free-sample.html">Free sample sheets</a><a href="../index.html#faq">FAQ</a></div></div>
+<div class="mi"><img src="../img/tee/front.jpg" alt=""></div></div><main id="main">
+<section class="dhero"><img src="../img/line/front.jpg" alt="The Line, street view"><div class="in"><div class="wrap">
+<p class="crumbs cap"><a href="../plans/index.html">All plans</a> / <a href="../collections/garden.html">Garden Collection</a> / PW-GC-01</p><h1>Line</h1>
+<div class="row"><p class="sub">One calm bar to the street. A taller glass living room behind.</p><div class="specs"><span>2,372 sf</span><span>3 bed</span><span>2.5 bath</span><span>98′ × 38′</span><span>2-car garage</span><span>lot ≥ 118 ft</span></div></div></div></div></section>
+
+<section class="chapter"><div class="wrap dgrid"><div><p class="eyebrow cap">The plan</p><h2 class="h-l">One calm low bar to the street; the living block rises 1/3 higher and pushes into the garden.</h2>
+<div class="paper rise mt40"><img src="../img/line/plan.jpg" alt="Furnished floor plan of The Line"></div>
+<ul class="rooms mt36"><li><span>Garage</span><b>24′-0″ × 24′-0″</b></li><li><span>Mud + laundry</span><b>8′-0″ × 12′-0″</b></li><li><span>Bedroom 3</span><b>12′-0″ × 12′-0″</b></li><li><span>Bedroom 2</span><b>12′-0″ × 12′-0″</b></li><li><span>Bath 2</span><b>6′-0″ × 12′-0″</b></li><li><span>Primary bedroom</span><b>15′-0″ × 12′-0″</b></li><li><span>Primary bath</span><b>8′-0″ × 12′-0″</b></li><li><span>WIC</span><b>6′-0″ × 12′-0″</b></li><li><span>Powder</span><b>4′-0″ × 12′-0″</b></li><li><span>Coats</span><b>5′-0″ × 12′-0″</b></li><li><span>Pantry</span><b>6′-0″ × 12′-0″</b></li><li><span>Kitchen</span><b>30′-0″ × 12′-0″</b></li><li><span>Dining</span><b>30′-0″ × 10′-0″</b></li><li><span>Living</span><b>30′-0″ × 16′-0″</b></li></ul></div>
+<aside class="buy" id="buy-box" data-buybox><p class="cap terra" data-launch-note>Launch price · $179 from Jan 1 · <span data-days></span> left</p><p class="cap muted">Plan + cost kit · one build</p><p class="pr num"><span data-price="179" data-launch="149">$149</span></p>
+<a class="btn btn-terra" href="#buy-box" data-buy="line">Buy The Line <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a><p class="pend" hidden tabindex="-1">Checkout opens on Payhip once the store is live.</p>
+<a class="btn btn-line" href="../free-sample.html">Free sample sheets first</a>
+<p class="note">26 files · 27-sheet set in 11×17 + 24×36 + reverse · DXF CAD of every drawing · Excel cost workbook · checklists. Instant download. Concept plans, not stamped.</p><p class="up">Still choosing? <a href="../collections/garden.html#bundle">All 6 Garden Collection plans for $399</a></p></aside></div></section>
+
+<section class="on-green gal-band"><div class="wrap"><div class="index-head"><div><p class="eyebrow cap">Gallery</p><h2 class="h-l">Around <em>The Line</em></h2></div><p class="cap hint">Drag · swipe</p></div></div>
+<div class="gal" tabindex="0" aria-label="Images of The Line"><figure><img src="../img/line/back.jpg" alt="The Line: garden side" loading="lazy"><figcaption class="cap">Garden side</figcaption></figure><figure><img src="../img/line/great.jpg" alt="The Line: great room" loading="lazy"><figcaption class="cap">Great room</figcaption></figure><figure><img src="../img/line/kitchen.jpg" alt="The Line: kitchen" loading="lazy"><figcaption class="cap">Kitchen</figcaption></figure><figure><img src="../img/line/plan3d.jpg" alt="The Line: 3d plan" loading="lazy"><figcaption class="cap">3D plan</figcaption></figure><figure><img src="../img/line/front.jpg" alt="The Line: street side" loading="lazy"><figcaption class="cap">Street side</figcaption></figure></div></section>
+<section class="chapter on-green"><div class="wrap vid"><video controls playsinline preload="none" poster="../img/line/front.jpg"><source src="../media/line-reveal.mp4" type="video/mp4"></video>
+<div><p class="eyebrow cap">24-second cost reveal</p><h2 class="h-l">What The Line <em>costs to build</em></h2>
+<p class="lede">Texas, mid finish: $518k. Basic $338k, high $807k. Garage, terraces, drive, front garden and a 10 % contingency included; land excluded.</p></div></div></section>
+<section class="chapter on-sand"><div class="wrap"><div class="index-head"><div><p class="eyebrow cap">Cost to build</p><h2 class="h-xl">Your state, <em>your finish</em></h2></div></div><div class="calc on-green" data-calc><div class="in"><div><label class="cap" for="calc-plan">Plan</label><select id="calc-plan"><optgroup label="The Garden Collection"><option value="tee">The Tee</option><option value="line" selected>The Line</option><option value="ell">The Ell</option><option value="telescope">The Telescope</option><option value="entry-court">The Entry Court</option><option value="offset">The Offset</option></optgroup><optgroup label="The Classic Collection"><option value="prairie">The Prairie</option></optgroup></select></div>
+<div><label class="cap" for="calc-state">State</label><select id="calc-state"><option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option selected>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option></select></div>
+<div><span class="cap" id="fin-l" style="display:block;color:var(--on-green-muted);margin-bottom:10px">Finish level</span><div class="seg" role="group" aria-labelledby="fin-l">
+<button type="button" data-finish="low" aria-pressed="false">Basic</button><button type="button" data-finish="mid" aria-pressed="true">Mid</button><button type="button" data-finish="high" aria-pressed="false">High</button></div></div>
+<p class="fine">The same numbers as the Excel workbook in every kit: 2026 planning defaults, a lot with utilities at the road and a 10 % contingency. Garage, terraces, drive and front garden included; land excluded.</p></div>
+<div class="out" aria-live="polite"><p class="cap muted" data-label>Texas · mid finish</p><p class="total num" data-total>$525k</p><p class="muted" data-psf></p><div class="bars" data-bars></div>
+<p class="fine">Planning estimate, not a quote. In the workbook you change every unit cost, mark the trades you do yourself and compare three builder quotes.</p></div></div></div></section>
+<section class="chapter"><div class="wrap kit"><div class="fan tight"><figure><img src="../img/line/sheet0.jpg" alt="Sheet A8 · wall section from The Line"><figcaption>A8 · wall section</figcaption></figure><figure><img src="../img/line/sheet1.jpg" alt="Sheet E1 · electrical from The Line"><figcaption>E1 · electrical</figcaption></figure><figure><img src="../img/line/sheet2.jpg" alt="Sheet A9 · interior elevations from The Line"><figcaption>A9 · interior elevations</figcaption></figure><figure><img src="../img/line/sheet3.jpg" alt="Sheet A10 · materials takeoff from The Line"><figcaption>A10 · materials takeoff</figcaption></figure></div>
+<div><p class="eyebrow cap">What's inside</p><h2 class="h-l">26 files, <em>one download</em></h2><div class="mt28"><ul class="files"><li><div><b>Plan set · 11×17</b><span>27 sheets: plans, site, elevations, sections, 9+ details, schedules, takeoff, structure, slab, electrical, plumbing, HVAC, code + energy</span></div><em>PDF</em></li><li><div><b>Full size · 24×36</b><span>The same set for your builder and the permit office</span></div><em>PDF</em></li><li><div><b>Reverse set</b><span>Mirror image for a garage or view on the other side</span></div><em>PDF</em></li><li><div><b>Cost-to-Build Workbook</b><span>Pre-filled by state, finish and site · quote compare · materials takeoff</span></div><em>XLSX</em></li><li><div><b>Start Here + 2 checklists</b><span>Builder quotes · before you pay a drafter</span></div><em>PDF</em></li><li><div><b>Lender spec sheet</b><span>Description of materials + cost summary for your construction loan</span></div><em>PDF</em></li><li><div><b>CAD folder</b><span>Editable layered floor plan with real dimensions + every drawing as DXF</span></div><em>DXF</em></li></ul></div></div></div></section>
+<section class="chapter on-sand"><div class="wrap shop"><div class="mask"><img src="../img/line/shop.jpg" alt="The Line with the optional 30 by 40 foot shop wing"></div>
+<div><p class="eyebrow cap">Included · sheet A11</p><h2 class="h-l">Shop wing option</h2>
+<p class="muted lede">A 30′ × 40′ shop wing beside the garage, drawn to scale with its own 12′ × 10′ street door and priced on its own row of the workbook.</p>
+<ul class="list"><li><span>Shop</span><b>1,200 sf · 12′ walls</b></li><li><span>Door</span><b>12′ × 10′ to the street</b></li><li><span>Power</span><b>100 A subpanel · 240 V</b></li><li><span>Texas, basic–mid</span><b>$38k–54k</b></li></ul></div></div></section>
+<section class="chapter " id="faq"><div class="wrap faq-grid"><div><p class="eyebrow cap">Good to know</p><h2 class="h-xl">Straight <em>answers</em></h2>
+<p class="muted lede" style="margin-top:24px">Something else? Ask before you buy by replying to any of our emails.</p></div><div class="faq"><details><summary>Are these plans stamped / permit-ready?</summary><p>No. They are complete concept / design plans: dimensioned plans, elevations, sections, details and design-intent foundation, electrical, plumbing and HVAC sheets. A licensed drafter or engineer in your area reviews them, adds what your county requires and stamps them where needed. The CAD files make that quick.</p></details><details><summary>Can my drafter change the plan?</summary><p>Yes. The floor plan comes as an editable DXF: walls, doors, windows and fixtures on their own layers, with real dimension objects, plus versions with the slab, power, plumbing and HVAC layers. Every other drawing comes as DXF for reference. Or choose Plan + Changes and we make one round of edits.</p></details><details><summary>Is the structure and energy code covered?</summary><p>As design intent, yes: sheet S0 shows the frames, beams and braced walls the house needs (your engineer sizes them), sheet G2 lists the IECC 2021 insulation and window values for every climate zone, and the details include foundations for cold climates. Your local engineer and building department have the final word.</p></details><details><summary>What does it really cost to build?</summary><p>Each plan shows the Texas basic / mid / high totals from its own Excel workbook, and the calculator re-prices them for your state. They are planning estimates, not quotes: your builder&#x27;s numbers decide.</p></details><details><summary>Which plan fits my lot?</summary><p>Every plan states the lot width it needs. The plan finder checks your lot width, bedrooms, office and budget against all plans in about a minute.</p></details><details><summary>What foundation do the plans use?</summary><p>A slab on grade (design intent on sheet S1). If your site needs a crawlspace or basement, your engineer adapts the foundation; the rest of the set stays the same.</p></details><details><summary>How do I print the plans?</summary><p>Print the 11×17 set at 100 % at home or at any print shop; each sheet states its scale. The 24×36 set is for your builder and the permit office.</p></details><details><summary>Can I get a refund?</summary><p>The files download instantly, so sales are final. If a file is missing, damaged or won&#x27;t open, tell us within 30 days and we fix it or refund you in full. Ask us anything before you buy.</p></details><details><summary>How many houses can I build?</summary><p>One build per purchase. Share the files with your builder, drafter, engineer, lender and building department for that build.</p></details><details><summary>Are new plans coming?</summary><p>Yes. New houses are added to the collections over time, each with the same complete kit. People on the free-sample list hear first.</p></details></div></div></section>
+<section class="chapter on-sand"><div class="wrap"><div class="index-head"><div><p class="eyebrow cap">Keep looking</p><h2 class="h-xl">Other <em>houses</em></h2></div>
+<div class="ctas"><a class="btn btn-green" href="../plans/index.html">All 7 plans</a><a class="btn btn-line" href="../plan-finder.html">Plan finder</a></div></div><ul class="idx"><li data-collection="garden" data-beds="3" data-feat="shop garage" data-size="m" data-o-size="2304" data-o-cost="525340" data-o-order="0" data-o-new="0"><a href="../plans/tee.html" data-img="../img/tee/front.jpg"><span class="th"><img src="../img/tee/front.jpg" alt="" loading="lazy"></span><span class="no">PW-GC-04</span><span class="nm">The Tee</span><span class="ds">2,304 sf · 3 bed · 2.5 bath · 80′ × 56′<br>A quiet bedroom bar. A glass living room between two terraces.</span><span class="cs">$525k<small>TX mid build</small></span><span class="pr">from <span data-price="179" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li><li data-collection="garden" data-beds="3" data-feat="office shop garage" data-size="m" data-o-size="2312" data-o-cost="516308" data-o-order="1" data-o-new="0"><a href="../plans/ell.html" data-img="../img/ell/front.jpg"><span class="th"><img src="../img/ell/front.jpg" alt="" loading="lazy"></span><span class="no">PW-GC-02</span><span class="nm">The Ell</span><span class="ds">2,312 sf · 3 bed + office · 2.5 bath · 76′ × 58′<br>Bedrooms shield the street. The living wing opens to an L-shaped garden.</span><span class="cs">$516k<small>TX mid build</small></span><span class="pr">from <span data-price="179" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li><li data-collection="garden" data-beds="3" data-feat="shop garage" data-size="m" data-o-size="2296" data-o-cost="517198" data-o-order="2" data-o-new="0"><a href="../plans/telescope.html" data-img="../img/telescope/front.jpg"><span class="th"><img src="../img/telescope/front.jpg" alt="" loading="lazy"></span><span class="no">PW-GC-03</span><span class="nm">The Telescope</span><span class="ds">2,296 sf · 3 bed · 2.5 bath · 70′ × 68′<br>Small and quiet in front. All glass to the garden.</span><span class="cs">$517k<small>TX mid build</small></span><span class="pr">from <span data-price="179" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li><li data-collection="garden" data-beds="3 4" data-feat="office bed4 shop garage" data-size="m" data-o-size="2400" data-o-cost="532741" data-o-order="3" data-o-new="0"><a href="../plans/entry-court.html" data-img="../img/entry-court/front.jpg"><span class="th"><img src="../img/entry-court/front.jpg" alt="" loading="lazy"></span><span class="no">PW-GC-05</span><span class="nm">The Entry Court</span><span class="ds">2,400 sf · 3 bed + office · 2.5 bath · 74′ × 56′<br>A walled entry court. A living bar open to the garden.</span><span class="cs">$533k<small>TX mid build</small></span><span class="pr">from <span data-price="179" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li><li data-collection="garden" data-beds="3" data-feat="shop garage" data-size="m" data-o-size="2452" data-o-cost="563341" data-o-order="4" data-o-new="0"><a href="../plans/offset.html" data-img="../img/offset/front.jpg"><span class="th"><img src="../img/offset/front.jpg" alt="" loading="lazy"></span><span class="no">PW-GC-06</span><span class="nm">The Offset</span><span class="ds">2,452 sf · 3 bed · 2.5 bath · 88′ × 64′<br>Two bars slide past each other, joined by a glass gallery.</span><span class="cs">$563k<small>TX mid build</small></span><span class="pr">from <span data-price="179" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li><li data-collection="classic" data-beds="3" data-feat="" data-size="m" data-o-size="2400" data-o-cost="365621" data-o-order="5" data-o-new="0"><a href="../plans/prairie.html" data-img="../img/prairie/front.jpg"><span class="th"><img src="../img/prairie/front.jpg" alt="" loading="lazy"></span><span class="no">BD-4060-A</span><span class="nm">The Prairie</span><span class="ds">2,400 sf · 3 bed · 2.5 bath · 60′ × 40′<br>Split bedrooms. A vaulted great room. The classic 40×60.</span><span class="cs">$366k<small>TX mid build</small></span><span class="pr">from <span data-price="149" data-launch="149">$149</span></span><span class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg></span></a></li></ul></div>
+<div class="peek" aria-hidden="true"><img src="../img/line/front.jpg" alt=""></div></section>
+</main>
+<div class="buybar" aria-label="Buy The Line"><span class="nm">The Line</span><span class="p num"><span data-price="179" data-launch="149">$149</span></span><a class="btn btn-terra" href="#buy-box">Buy the kit</a></div>
+<footer><div class="wrap"><div class="cols"><div><a class="logo" href="../index.html"><svg class="mark" viewBox="0 0 200 200" aria-hidden="true"><path d="M30 122 L100 56 L170 122" fill="none" stroke="#f6f1e7" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/><circle cx="100" cy="144" r="13" fill="#9a5b3c"/></svg><span class="wm"><b>PLOTWRIGHT</b><i>HOME &amp; YARD PLANS</i></span></a>
+<p class="note">House plans with the real cost to build. Concept / design plans, not stamped construction documents: a licensed professional in your area reviews and adapts them before you build.</p></div>
+<div><h4>Plans</h4><ul><li><a href="../plans/tee.html">The Tee</a></li><li><a href="../plans/line.html">The Line</a></li><li><a href="../plans/ell.html">The Ell</a></li><li><a href="../plans/telescope.html">The Telescope</a></li><li><a href="../plans/entry-court.html">The Entry Court</a></li><li><a href="../plans/offset.html">The Offset</a></li><li><a href="../plans/prairie.html">The Prairie</a></li><li><a href="../plans/index.html">All 7 plans →</a></li></ul></div>
+<div><h4>Collections</h4><ul><li><a href="../collections/garden.html">The Garden Collection</a></li><li><a href="../collections/classic.html">The Classic Collection</a></li><li><a href="../plan-finder.html">Plan finder</a></li><li><a href="../index.html#cost">Cost calculator</a></li></ul></div>
+<div><h4>Help</h4><ul><li><a href="../free-sample.html">Free sample sheets</a></li><li><a href="../index.html#faq">FAQ</a></li><li><a href="../licence.html">Licence + refunds</a></li><li><a href="../privacy.html">Privacy</a></li><li><a href="../imprint.html">Imprint</a></li></ul></div></div>
+<div class="giant" aria-hidden="true">PLOTWRIGHT</div><div class="bottom"><span>© 2026 Plotwright · Home &amp; Yard Plans</span><span>See it. Price it. Build it.</span></div></div></footer><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "The Line house plan + cost kit", "sku": "PW-GC-01", "description": "One calm bar to the street. A taller glass living room behind. 2,372 sf · 3 bed · 2.5 bath · 98′ × 38′. 27-sheet plan set, CAD files and an Excel cost-to-build workbook.", "brand": {"@type": "Brand", "name": "Plotwright"}, "offers": {"@type": "Offer", "priceCurrency": "USD", "price": "149", "availability": "https://schema.org/InStock", "priceValidUntil": "2026-12-31"}}</script><script>window.PW={"launchEnd": "2027-01-01", "links": {"tee": "", "line": "", "ell": "", "telescope": "", "entry-court": "", "offset": "", "prairie": "", "bundle": "", "changes": "", "sample": ""}, "states": {"Alabama": 0.88, "Alaska": 1.22, "Arizona": 1.02, "Arkansas": 0.9, "California": 1.22, "Colorado": 1.02, "Connecticut": 1.18, "Delaware": 0.95, "Florida": 0.95, "Georgia": 0.95, "Hawaii": 1.22, "Idaho": 1.02, "Illinois": 1.0, "Indiana": 1.0, "Iowa": 0.95, "Kansas": 0.95, "Kentucky": 0.88, "Louisiana": 0.9, "Maine": 1.18, "Maryland": 0.95, "Massachusetts": 1.18, "Michigan": 1.0, "Minnesota": 0.95, "Mississippi": 0.88, "Missouri": 0.95, "Montana": 1.02, "Nebraska": 0.95, "Nevada": 1.02, "New Hampshire": 1.18, "New Jersey": 1.15, "New Mexico": 1.02, "New York": 1.15, "North Carolina": 0.95, "North Dakota": 0.95, "Ohio": 1.0, "Oklahoma": 0.9, "Oregon": 1.22, "Pennsylvania": 1.15, "Rhode Island": 1.18, "South Carolina": 0.95, "South Dakota": 0.95, "Tennessee": 0.88, "Texas": 0.9, "Utah": 1.02, "Vermont": 1.18, "Virginia": 0.95, "Washington": 1.22, "West Virginia": 0.95, "Wisconsin": 1.0, "Wyoming": 1.02}, "base": "../", "collections": {"garden": "The Garden Collection", "classic": "The Classic Collection"}, "designs": [{"slug": "tee", "name": "The Tee", "collection": "garden", "heated": 2304, "cost": {"low": 341442, "mid": 525340, "high": 822449}, "groups": [["Site & utilities", 17150], ["Foundation", 29128], ["Shell", 163072], ["Openings", 61020], ["Insulation", 16454], ["Interior framing & drywall", 19521], ["Plumbing", 20700], ["Electrical", 14515], ["HVAC", 17626], ["Finishes", 90094], ["Exterior", 17053], ["Soft costs", 11250]], "beds": 3, "office": false, "bed4": false, "lot": 100, "spec": "2,304 sf · 3 bed · 2.5 bath · 80′ × 56′", "img": "img/tee/front.jpg", "price": [149, 179]}, {"slug": "line", "name": "The Line", "collection": "garden", "heated": 2372, "cost": {"low": 338351, "mid": 518460, "high": 807402}, "groups": [["Site & utilities", 17412], ["Foundation", 29516], ["Shell", 160775], ["Openings", 50580], ["Insulation", 16910], ["Interior framing & drywall", 20475], ["Plumbing", 20700], ["Electrical", 14944], ["HVAC", 18146], ["Finishes", 90920], ["Exterior", 19699], ["Soft costs", 11250]], "beds": 3, "office": false, "bed4": false, "lot": 118, "spec": "2,372 sf · 3 bed · 2.5 bath · 98′ × 38′", "img": "img/line/front.jpg", "price": [149, 179]}, {"slug": "ell", "name": "The Ell", "collection": "garden", "heated": 2312, "cost": {"low": 336807, "mid": 516308, "high": 804403}, "groups": [["Site & utilities", 17150], ["Foundation", 29030], ["Shell", 158810], ["Openings", 51795], ["Insulation", 16658], ["Interior framing & drywall", 20853], ["Plumbing", 19080], ["Electrical", 14566], ["HVAC", 17687], ["Finishes", 90191], ["Exterior", 22302], ["Soft costs", 11250]], "beds": 3, "office": true, "bed4": false, "lot": 96, "spec": "2,312 sf · 3 bed + office · 2.5 bath · 76′ × 58′", "img": "img/ell/front.jpg", "price": [149, 179]}, {"slug": "telescope", "name": "The Telescope", "collection": "garden", "heated": 2296, "cost": {"low": 338611, "mid": 517198, "high": 801897}, "groups": [["Site & utilities", 17673], ["Foundation", 27929], ["Shell", 166861], ["Openings", 40995], ["Insulation", 17693], ["Interior framing & drywall", 17298], ["Plumbing", 22320], ["Electrical", 14465], ["HVAC", 17564], ["Finishes", 89996], ["Exterior", 26136], ["Soft costs", 11250]], "beds": 3, "office": false, "bed4": false, "lot": 90, "spec": "2,296 sf · 3 bed · 2.5 bath · 70′ × 68′", "img": "img/telescope/front.jpg", "price": [149, 179]}, {"slug": "entry-court", "name": "The Entry Court", "collection": "garden", "heated": 2400, "cost": {"low": 349240, "mid": 532741, "high": 826632}, "groups": [["Site & utilities", 17673], ["Foundation", 35348], ["Shell", 162542], ["Openings", 51210], ["Insulation", 17890], ["Interior framing & drywall", 20115], ["Plumbing", 22320], ["Electrical", 15120], ["HVAC", 18360], ["Finishes", 91260], ["Exterior", 21222], ["Soft costs", 11250]], "beds": 3, "office": true, "bed4": true, "lot": 94, "spec": "2,400 sf · 3 bed + office · 2.5 bath · 74′ × 56′", "img": "img/entry-court/front.jpg", "price": [149, 179]}, {"slug": "offset", "name": "The Offset", "collection": "garden", "heated": 2452, "cost": {"low": 367907, "mid": 563341, "high": 876665}, "groups": [["Site & utilities", 17150], ["Foundation", 35154], ["Shell", 182851], ["Openings", 61020], ["Insulation", 18244], ["Interior framing & drywall", 18810], ["Plumbing", 20700], ["Electrical", 15448], ["HVAC", 18758], ["Finishes", 91892], ["Exterior", 20851], ["Soft costs", 11250]], "beds": 3, "office": false, "bed4": false, "lot": 108, "spec": "2,452 sf · 3 bed · 2.5 bath · 88′ × 64′", "img": "img/offset/front.jpg", "price": [149, 179]}, {"slug": "prairie", "name": "The Prairie", "collection": "classic", "heated": 2400, "cost": {"low": 235694, "mid": 365621, "high": 573085}, "groups": [["Site & utilities", 36000], ["Foundation", 23652], ["Steel shell", 81180], ["Openings", 16740], ["Insulation", 11092], ["Interior framing & drywall", 16119], ["Plumbing", 20070], ["Electrical", 15120], ["HVAC", 16200], ["Finishes", 82800], ["Exterior", 2160], ["Soft costs", 11250]], "beds": 3, "office": false, "bed4": false, "lot": 80, "spec": "2,400 sf · 3 bed · 2.5 bath · 60′ × 40′", "img": "img/prairie/front.jpg", "price": [149, 149]}]};</script><script>/* Plotwright v3 behaviour. Pages are complete without this file; it adds the loader, the hero cycle, scroll-lit words, the
+   cursor preview, the horizontal strip, the sticky story, counters, the calculator, the menu and the Payhip links. */
+(function () {
+  var PW = window.PW || {};
+  var root = document.documentElement;
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  root.classList.add("js");
+  var $ = function (s, el) { return (el || document).querySelector(s); };
+  var $$ = function (s, el) { return Array.prototype.slice.call((el || document).querySelectorAll(s)); };
+  var fmtK = function (v) { return "$" + Math.round(v / 1000).toLocaleString("en-US") + "k"; };
+  var fmt = function (v) { return "$" + Math.round(v).toLocaleString("en-US"); };
+  var clamp = function (v, a, b) { return Math.max(a, Math.min(b, v)); };
+
+  /* loader: the roof line draws itself, once per visit, never for reduced motion */
+  var seen = false;
+  try { seen = sessionStorage.getItem("pw-loaded") === "1"; sessionStorage.setItem("pw-loaded", "1"); } catch (e) {}
+  if (!reduce && !seen && $(".hero")) {
+    var L = document.createElement("div");
+    L.className = "loader";
+    L.setAttribute("aria-hidden", "true");
+    L.innerHTML = '<svg viewBox="0 0 200 200"><path d="M30 122 L100 56 L170 122" fill="none" stroke="#f6f1e7" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/><circle cx="100" cy="144" r="13" fill="#e7b48f"/></svg><b>PLOTWRIGHT</b>';
+    document.body.appendChild(L);
+    setTimeout(function () { L.classList.add("out"); }, 1300);
+    setTimeout(function () { L.remove(); }, 2300);
+  }
+
+  /* launch price ($149 until the end date, then list) */
+  var end = PW.launchEnd ? new Date(PW.launchEnd + "T00:00:00") : null, now = new Date(), launch = end && now < end;
+  $$("[data-price]").forEach(function (el) { var p = launch ? el.getAttribute("data-launch") : el.getAttribute("data-price"); if (p) el.textContent = "$" + p; });
+  $$("[data-days]").forEach(function (el) {
+    if (!launch) { var box = el.closest("[data-launch-note]"); if (box) box.hidden = true; return; }
+    var d = Math.max(1, Math.ceil((end - now) / 86400000)); el.textContent = d + (d === 1 ? " day" : " days");
+  });
+
+  /* Payhip links (until set, the button explains instead of going nowhere) */
+  $$("[data-buy]").forEach(function (a) {
+    var url = (PW.links || {})[a.getAttribute("data-buy")];
+    if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; return; }
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var box = (a.closest("[data-buybox]") || a.parentElement).querySelector(".pend");
+      if (box) { box.hidden = false; box.focus(); }
+    });
+  });
+
+  /* full-page menu */
+  var menu = $("#menu"), openBtn = $("[data-menu-open]");
+  if (menu && openBtn) {
+    var mi = $(".mi img", menu);
+    var close = function () { menu.hidden = true; openBtn.setAttribute("aria-expanded", "false"); document.body.style.overflow = ""; openBtn.focus(); };
+    openBtn.addEventListener("click", function () { menu.hidden = false; openBtn.setAttribute("aria-expanded", "true"); document.body.style.overflow = "hidden"; $("a", menu).focus(); });
+    $$("[data-menu-close]").forEach(function (b) { b.addEventListener("click", close); });
+    menu.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
+    $$("a[data-img]", menu).forEach(function (a) {
+      var show = function () { if (mi) mi.src = a.getAttribute("data-img"); };
+      a.addEventListener("mouseenter", show); a.addEventListener("focus", show);
+      a.addEventListener("click", function () { menu.hidden = true; document.body.style.overflow = ""; });
+    });
+  }
+
+  /* hero: cycle the whole collection */
+  var slides = $$(".slide"), ticks = $$(".ticks button"), nowName = $("[data-now-name]"), nowSpec = $("[data-now-spec]"), cur = 0, timer = null;
+  var go = function (i) {
+    if (!slides.length) return;
+    slides[cur].classList.remove("on"); ticks[cur] && ticks[cur].classList.remove("on");
+    cur = (i + slides.length) % slides.length;
+    slides[cur].classList.add("on");
+    if (ticks[cur]) { void ticks[cur].offsetWidth; ticks[cur].classList.add("on"); }
+    if (nowName) { nowName.textContent = slides[cur].getAttribute("data-name"); nowName.href = slides[cur].getAttribute("data-href"); }
+    if (nowSpec) nowSpec.textContent = slides[cur].getAttribute("data-spec");
+  };
+  if (slides.length) {
+    ticks.forEach(function (t, i) { t.addEventListener("click", function () { go(i); restart(); }); });
+    var restart = function () { if (reduce) return; clearInterval(timer); timer = setInterval(function () { go(cur + 1); }, 6000); };
+    go(0); restart();
+  }
+
+  /* split words for scroll-lit paragraphs */
+  var lit = $$("[data-lit]");
+  lit.forEach(function (p) {
+    p.innerHTML = p.textContent.trim().split(/\s+/).map(function (w) { return '<span class="w">' + w + "</span>"; }).join(" ");
+  });
+
+  /* horizontal strip: enable sticky mode only with motion allowed */
+  var hz = $(".hz");
+  if (hz && !reduce && window.innerWidth > 760) document.body.classList.add("hz-on");
+
+  /* sticky story */
+  var steps = $$(".story .step"), vis = $$(".story .vis img"), lbl = $(".story .vis .lbl");
+  var setStep = function (i) {
+    steps.forEach(function (s, k) { s.classList.toggle("on", k === i); });
+    vis.forEach(function (v, k) { v.classList.toggle("on", k === i); });
+    if (lbl && steps[i]) lbl.textContent = steps[i].getAttribute("data-label");
+  };
+  if (steps.length) setStep(0);
+
+  /* counters */
+  var counters = $$("[data-count]");
+  var counted = new WeakSet();
+  var runCount = function (el) {
+    if (counted.has(el)) return; counted.add(el);
+    var to = parseFloat(el.getAttribute("data-count")), t0 = performance.now(), dur = 1200;
+    if (reduce) { el.textContent = to.toLocaleString("en-US"); return; }
+    var tick = function (t) { var k = clamp((t - t0) / dur, 0, 1); k = 1 - Math.pow(1 - k, 3); el.textContent = Math.round(to * k).toLocaleString("en-US"); if (k < 1) requestAnimationFrame(tick); };
+    requestAnimationFrame(tick);
+  };
+
+  /* reveal helpers (elements are visible at rest; .pre only offsets them while below the fold) */
+  var rises = $$(".rise, .mask, .dhero, .fan");
+  if (!reduce) rises.forEach(function (el) { if (el.classList.contains("rise") && el.getBoundingClientRect().top > window.innerHeight) el.classList.add("pre"); });
+
+  var onScroll = function () {
+    var vh = window.innerHeight;
+    lit.forEach(function (p) {
+      if (reduce) return;
+      var r = p.getBoundingClientRect(), words = p.children, n = words.length;
+      var prog = clamp((vh * 0.85 - r.top) / (r.height + vh * 0.35), 0, 1);
+      for (var i = 0; i < n; i++) words[i].style.opacity = (i / n < prog ? 1 : 0.28);
+    });
+    if (hz && document.body.classList.contains("hz-on")) {
+      var tr = $(".track", hz), r2 = hz.getBoundingClientRect(), max = tr.scrollWidth - window.innerWidth;
+      hz.style.height = (max + vh) + "px";
+      var p2 = clamp(-r2.top / (r2.height - vh), 0, 1);
+      tr.style.transform = "translate3d(" + (-max * p2) + "px,0,0)";
+    }
+    if (steps.length && window.innerWidth > 900) {
+      var best = 0, bd = 1e9;
+      steps.forEach(function (s, i) { var r3 = s.getBoundingClientRect(), d = Math.abs(r3.top + r3.height / 2 - vh / 2); if (d < bd) { bd = d; best = i; } });
+      setStep(best);
+    }
+    rises.forEach(function (el) {
+      var r4 = el.getBoundingClientRect();
+      if (r4.top < vh * 0.9) { el.classList.remove("pre"); el.classList.add("in"); if (el.classList.contains("fan")) el.classList.remove("tight"); }
+    });
+    counters.forEach(function (c) { if (c.getBoundingClientRect().top < vh * 0.9) runCount(c); });
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
+  onScroll();
+
+  /* cursor-following preview on the collection index */
+  var peek = $(".peek");
+  if (peek && window.matchMedia("(hover: hover)").matches) {
+    var pimg = $("img", peek), px = 0, py = 0, tx = 0, ty = 0, raf = null;
+    var loop = function () { px += (tx - px) * 0.18; py += (ty - py) * 0.18; peek.style.left = px + "px"; peek.style.top = py + "px"; raf = requestAnimationFrame(loop); };
+    $$(".idx a").forEach(function (a) {
+      a.addEventListener("mouseenter", function (e) { pimg.src = a.getAttribute("data-img"); tx = px = e.clientX; ty = py = e.clientY; peek.classList.add("on"); if (!raf && !reduce) loop(); });
+      a.addEventListener("mousemove", function (e) { tx = e.clientX; ty = e.clientY; if (reduce) { peek.style.left = tx + "px"; peek.style.top = ty + "px"; } });
+      a.addEventListener("mouseleave", function () { peek.classList.remove("on"); });
+    });
+  }
+
+  /* catalogue filters + sort (home, catalogue). Groups AND, values inside a group OR. data-sync keeps them in the URL (?beds=4&sort=size-asc). */
+  $$("[data-catalog]").forEach(function (cat) {
+    var list = $(".idx", cat), items = $$("li", list), btns = $$("[data-fgroup]", cat), resets = $$("[data-freset]", cat);
+    var sort = $("[data-sort]", cat), count = $("[data-results]", cat), empty = $("[data-empty]", cat);
+    var single = cat.hasAttribute("data-single"), sync = cat.hasAttribute("data-sync"), sel = {};
+    var none = function () { return Object.keys(sel).every(function (g) { return !sel[g].length; }); };
+    var apply = function (push) {
+      var n = 0;
+      items.forEach(function (li) {
+        var ok = Object.keys(sel).every(function (g) {
+          if (!sel[g].length) return true;
+          var v = (li.getAttribute("data-" + g) || "").split(" ");
+          return sel[g].some(function (x) { return v.indexOf(x) >= 0; });
+        });
+        li.hidden = !ok; if (ok) n++;
+      });
+      btns.forEach(function (b) { var g = b.getAttribute("data-fgroup"); b.setAttribute("aria-pressed", (sel[g] || []).indexOf(b.getAttribute("data-fval")) >= 0 ? "true" : "false"); });
+      resets.forEach(function (b) { b.setAttribute("aria-pressed", none() ? "true" : "false"); });
+      if (count) count.textContent = n + (n === 1 ? " plan" : " plans");
+      if (empty) empty.hidden = n > 0;
+      if (sync && push && window.history && history.replaceState) {
+        var q = Object.keys(sel).filter(function (g) { return sel[g].length; }).map(function (g) { return g + "=" + sel[g].join(","); });
+        if (sort && sort.value !== "order") q.push("sort=" + sort.value);
+        try { history.replaceState(null, "", location.pathname + (q.length ? "?" + q.join("&") : "") + location.hash); } catch (e) {}
+      }
+    };
+    var order = function () {
+      if (!sort) return;
+      var v = sort.value.split("-"), key = "data-o-" + v[0], dir = v[1] === "desc" ? -1 : 1;
+      items.slice().sort(function (a, b) { return (parseFloat(a.getAttribute(key)) - parseFloat(b.getAttribute(key))) * dir || (a.getAttribute("data-o-order") - b.getAttribute("data-o-order")); })
+        .forEach(function (li) { list.appendChild(li); });
+    };
+    btns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        var g = b.getAttribute("data-fgroup"), v = b.getAttribute("data-fval"), a = sel[g] || [], i = a.indexOf(v);
+        if (single) { sel = {}; sel[g] = i >= 0 ? [] : [v]; } else { if (i >= 0) a.splice(i, 1); else a.push(v); sel[g] = a; }
+        apply(true);
+      });
+    });
+    resets.forEach(function (b) { b.addEventListener("click", function () { sel = {}; apply(true); }); });
+    if (sort) sort.addEventListener("change", function () { order(); apply(true); });
+    if (sync) {
+      location.search.replace(/^\?/, "").split("&").forEach(function (kv) {
+        var p = kv.split("="), g = decodeURIComponent(p[0] || ""), v = decodeURIComponent(p[1] || "");
+        if (!g || !v) return;
+        if (g === "sort" && sort) { if ($('option[value="' + v.replace(/[^a-z-]/g, "") + '"]', sort)) sort.value = v; return; }
+        if (btns.some(function (b) { return b.getAttribute("data-fgroup") === g; })) sel[g] = v.split(",");
+      });
+      order();
+    }
+    apply(false);
+  });
+
+  /* plan finder: hard limits (bedrooms, lot, style) decide a match; office and budget rank them */
+  var fd = $("[data-finder]");
+  if (fd && PW.designs) {
+    var outF = $("[data-finder-out]", fd), stSel = $("#f-state", fd), base = PW.base || "";
+    var val = function (n) { var r = $('input[name="' + n + '"]:checked', fd); return r ? r.value : "any"; };
+    var esc = function (t) { return String(t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); };
+    var renderF = function () {
+      var beds = val("beds"), office = val("office"), lotW = +val("lot") || 0, budget = +val("budget") || 0, style = val("style"), st = stSel.value, m = (PW.states[st] || 0.9) / 0.9;
+      var rows = PW.designs.map(function (d) {
+        var c = [], lo = d.cost.low * m, mid = d.cost.mid * m;
+        if (beds === "4") c.push({ ok: d.beds >= 4 || d.bed4, hard: true, t: d.beds >= 4 ? d.beds + " bedrooms" : (d.bed4 ? "4th bedroom: the office converts" : "Only " + d.beds + " bedrooms") });
+        else if (beds === "3") c.push({ ok: d.beds >= 3, hard: true, t: d.beds + " bedrooms" + (d.office ? " + office" : "") });
+        if (office === "yes") c.push({ ok: !!d.office, hard: true, t: d.office ? "Separate home office" : "No separate office" });
+        if (lotW) c.push({ ok: d.lot <= lotW, hard: true, t: "Needs a lot about " + d.lot + " ft wide" });
+        if (style && style !== "any") c.push({ ok: d.collection === style, hard: true, t: PW.collections[d.collection] });
+        if (budget) c.push({ ok: lo <= budget, warn: lo <= budget && mid > budget,
+          t: mid <= budget ? "Mid finish " + fmtK(mid) + " in " + st : (lo <= budget ? "Basic finish " + fmtK(lo) + " in " + st + " (mid " + fmtK(mid) + ")" : "Basic finish " + fmtK(lo) + " in " + st + ": over budget") });
+        else c.push({ ok: true, t: "Basic " + fmtK(lo) + " to mid " + fmtK(mid) + " in " + st });
+        var fit = c.every(function (x) { return !x.hard || x.ok; }), score = c.reduce(function (s, x) { return s + (x.ok ? (x.hard ? 3 : 2) - (x.warn ? 1 : 0) : 0); }, 0);
+        return { d: d, c: c, fit: fit, score: score, mid: mid };
+      }).sort(function (a, b) { return (b.fit - a.fit) || (b.score - a.score) || (a.mid - b.mid); });
+      var fits = rows.filter(function (r) { return r.fit; }), show = fits.length ? fits.slice(0, 4) : rows.slice(0, 2), lp = launch ? 0 : 1;
+      var open = beds === "any" && office === "any" && !lotW && !budget && (!style || style === "any");
+      var head = open ? '<p class="fcount">Every plan fits so far. Answer a question to narrow it down; lowest build cost first:</p>' : fits.length ? '<p class="fcount">' + fits.length + (fits.length === 1 ? " plan fits" : " plans fit") + (fits.length > 4 ? ", best 4 shown" : "") + "</p>"
+        : '<p class="fcount">No plan fits all of that yet. The closest:</p>';
+      outF.innerHTML = head + '<ul class="fres">' + show.map(function (r, i) {
+        var d = r.d;
+        return '<li><a class="fl" href="' + base + "plans/" + d.slug + '.html"><img src="' + base + d.img + '" alt=""><span class="fx"><span class="cap">' + (open ? PW.collections[d.collection] : r.fit ? (i === 0 ? "Best match" : "Match") : "Closest") + "</span><b>" + esc(d.name) + "</b><small>" + esc(d.spec) + "</small></span></a>" +
+          '<ul class="chk">' + r.c.map(function (x) { return '<li class="' + (x.ok ? (x.warn ? "warn" : "ok") : "no") + '">' + esc(x.t) + "</li>"; }).join("") + "</ul>" +
+          '<p class="fp"><span>Plan + cost kit <b>$' + d.price[lp] + '</b></span><a href="' + base + "plans/" + d.slug + '.html">See the plan →</a></p></li>';
+      }).join("") + "</ul>";
+    };
+    $$("input", fd).forEach(function (i) { i.addEventListener("change", renderF); });
+    stSel.addEventListener("change", renderF);
+    renderF();
+  }
+
+  /* calculator: workbook (Texas) figures scaled by the workbook's regional multipliers */
+  var calc = $("[data-calc]");
+  if (calc && PW.designs) {
+    var selD = $("#calc-plan", calc), selS = $("#calc-state", calc), segs = $$("[data-finish]", calc), finish = "mid";
+    var out = $("[data-total]", calc), psf = $("[data-psf]", calc), bars = $("[data-bars]", calc), lbl2 = $("[data-label]", calc);
+    var render = function () {
+      var d = PW.designs.filter(function (x) { return x.slug === selD.value; })[0], k = (PW.states[selS.value] || 0.9) / 0.9, total = d.cost[finish] * k;
+      out.textContent = fmtK(total); psf.textContent = fmt(total / d.heated) + " per heated sq ft";
+      lbl2.textContent = selS.value + " · " + (finish === "low" ? "basic" : finish) + " finish · " + d.name;
+      var share = d.cost[finish] / d.cost.mid, rows = d.groups.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 6), max = rows[0][1];
+      bars.innerHTML = rows.map(function (r) { return '<div class="bar"><span>' + r[0] + '</span><i><em style="width:' + (r[1] / max * 100).toFixed(1) + '%"></em></i><b>' + fmtK(r[1] * share * k) + "</b></div>"; }).join("");
+    };
+    selD.addEventListener("change", render); selS.addEventListener("change", render);
+    segs.forEach(function (b) { b.addEventListener("click", function () { finish = b.getAttribute("data-finish"); segs.forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); }); render(); }); });
+    render();
+  }
+
+  /* gallery: drag to scroll on desktop */
+  $$(".gal").forEach(function (g) {
+    var down = false, sx = 0, sl = 0;
+    g.addEventListener("pointerdown", function (e) { if (e.pointerType !== "mouse") return; down = true; sx = e.clientX; sl = g.scrollLeft; g.style.scrollSnapType = "none"; });
+    window.addEventListener("pointerup", function () { if (down) { down = false; g.style.scrollSnapType = ""; } });
+    g.addEventListener("pointermove", function (e) { if (down) g.scrollLeft = sl - (e.clientX - sx); });
+  });
+
+  /* ambient videos never autoplay for reduced motion */
+  $$("video[data-ambient]").forEach(function (v) { if (reduce) { v.removeAttribute("autoplay"); v.pause(); } });
+})();
+</script></body></html>
