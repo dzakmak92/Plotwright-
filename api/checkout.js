@@ -2,6 +2,8 @@
 // Creates a Stripe Checkout Session and returns its URL.
 import { PLANS, PRICES, BUNDLE_SIZE, siteUrl, stripe, json } from './_lib.js';
 
+const WAIVER_ID = 'instant-download-waiver-v1';
+const WAIVER_TEXT = 'Digital download. You agreed that delivery starts immediately after payment and that your right of withdrawal ends once the download is available.';
 const KIT = 'Full plan set in 11×17 + 24×36 + reverse, CAD (DXF) of every drawing, Excel cost-to-build workbook, lender sheet and checklists. Instant download. One build per plan.';
 
 export async function POST(request) {
@@ -12,6 +14,8 @@ export async function POST(request) {
     return json({ error: 'Bad request' }, 400);
   }
   const kind = input?.kind;
+  // EU digital-content rule: the buyer must agree that delivery starts now (ends the withdrawal right)
+  if (input?.consent !== true) return json({ error: 'Please confirm the instant-download agreement first.' }, 400);
   const site = siteUrl();
   let from = site;
   try {
@@ -26,8 +30,9 @@ export async function POST(request) {
     allow_promotion_codes: 'true',
     billing_address_collection: 'auto',
     customer_creation: 'if_required',
-    metadata: { kind },
-    payment_intent_data: { metadata: { kind } },
+    metadata: { kind, consent: WAIVER_ID, consent_at: new Date().toISOString() },
+    payment_intent_data: { metadata: { kind, consent: WAIVER_ID } },
+    custom_text: { submit: { message: WAIVER_TEXT } },
   };
 
   if (kind === 'plan') {
