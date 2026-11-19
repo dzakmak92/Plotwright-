@@ -15,6 +15,9 @@ export const PLANS = {
   prairie: 'The Prairie',
 };
 
+// Stripe dropdown values may only contain letters and digits
+export const fieldValue = (slug) => slug.replace(/[^a-z0-9]/gi, '');
+
 export const siteUrl = () => (process.env.SITE_URL || 'https://plotwright.vortexunit.de').replace(/\/$/, '');
 
 export const json = (body, status = 200) =>
@@ -69,8 +72,8 @@ export async function paidOrder(sessionId) {
   let plans = (s.metadata?.plans || '').split(',').filter((p) => PLANS[p]);
   if (s.metadata?.kind === 'changes') {
     const pick = (s.custom_fields || []).find((f) => f.key === 'plan');
-    const slug = pick?.dropdown?.value?.replace(/_/g, '-');
-    if (slug && PLANS[slug]) plans = [slug];
+    const slug = Object.keys(PLANS).find((p) => fieldValue(p) === pick?.dropdown?.value);
+    if (slug) plans = [slug];
   }
   return { paid: true, kind: s.metadata?.kind, email: s.customer_details?.email || '', plans };
 }

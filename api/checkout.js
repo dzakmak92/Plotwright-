@@ -1,6 +1,6 @@
 // POST /api/checkout  { kind: "plan", plan } | { kind: "bundle", plans: [5 slugs] } | { kind: "changes", plan? }
 // Creates a Stripe Checkout Session and returns its URL.
-import { PLANS, PRICES, BUNDLE_SIZE, siteUrl, stripe, json } from './_lib.js';
+import { PLANS, PRICES, BUNDLE_SIZE, siteUrl, stripe, json, fieldValue } from './_lib.js';
 
 const WAIVER_ID = 'instant-download-waiver-v1';
 const WAIVER_TEXT = 'Digital download. You agreed that delivery starts immediately after payment and that your right of withdrawal ends once the download is available.';
@@ -48,10 +48,10 @@ export async function POST(request) {
       product_data: { name: 'Bundle of 5 plans', description: `${plans.map((p) => PLANS[p]).join(', ')}. Five complete kits, instant download. One build per plan.` } } }];
     session.metadata.plans = plans.join(',');
   } else if (kind === 'changes') {
-    const options = Object.entries(PLANS).map(([slug, name]) => ({ label: name, value: slug.replace(/-/g, '_') }));
+    const options = Object.entries(PLANS).map(([slug, name]) => ({ label: name, value: fieldValue(slug) }));
     session.line_items = [{ quantity: 1, price_data: { currency: 'usd', unit_amount: PRICES.changes,
       product_data: { name: 'Plan + Changes', description: 'One plan kit plus one round of edits: rooms, sizes, windows, garage side. Updated drawings and CAD. The kit downloads right away; we email to confirm your changes.' } } }];
-    const pre = PLANS[input.plan] ? input.plan.replace(/-/g, '_') : undefined;
+    const pre = PLANS[input.plan] ? fieldValue(input.plan) : undefined;
     session.custom_fields = [
       { key: 'plan', type: 'dropdown', label: { type: 'custom', custom: 'Which plan?' }, dropdown: { options, default_value: pre } },
       { key: 'changes', type: 'text', label: { type: 'custom', custom: 'What should change?' }, text: { maximum_length: 255 } },
